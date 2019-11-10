@@ -1,0 +1,106 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "analizator.bg",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/questions": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {}
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "QuestionDefinition": {
+        "title": "QuestionDefinition",
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "id": "793",
+            "type": "1",
+            "created": "2019-02-04 15:06:07",
+            "modified": "2019-02-04 15:06:11",
+            "cache_last_answered_date": null,
+            "question_text": "oshte li igraesh mainkraft?",
+            "visibility": "2",
+            "created_by": "5316",
+            "link_hash": "53OGIxOTMyMDE5LTAyLTA0IDE1OjA2OjA3OTQ36",
+            "cache_binary_answers_text": "?????",
+            "theme_id": null,
+            "question_img": "/attachments/question/0007/93/_shrinked_ce5be15d865fe11849132ad9acd9e038.jpg",
+            "cache_user_answers_count": "74",
+            "updated": "2019-02-04 15:06:11",
+            "publish_status": "0",
+            "angle": "1",
+            "cache_user_liked_count": "0",
+            "cache_user_disliked_count": "5",
+            "cache_commentars_count": "0",
+            "cache_theme_background": "#6a2e46",
+            "cache_theme_image_css": "background-size: cover !important;",
+            "cache_answered_users_count": "74",
+            "mixed_id": "79307",
+            "mixed_link": "questions/79307/oshte-li-igraesh-mainkraft",
+            "is_deleted": "0",
+            "question_image_type": "0",
+            "question_video_url": null,
+            "q_video_start_pos": null,
+            "q_video_end_pos": null
+          }
+        },
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "modified": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "cache_last_answered_date": {
+            "type": "string"
+          },
+          "question_text": {
+            "type": "string"
+          },
+          "visibility": {
+            "type": "string"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "link_hash": {
+            "type": "string"
+          },
+          "theme_id": {
+            "type": "string"
+          },
+          "question_img": {
+            "type": "string"
+          },
+          "cache_user_answers_count": {
+            "type": "string"
+          },
+          "updated": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  }
+}
