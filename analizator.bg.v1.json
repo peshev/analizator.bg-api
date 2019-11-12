@@ -6,23 +6,74 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000"
+      "url": "http://localhost:3000/JSON"
     }
   ],
   "paths": {
     "/questions": {
-      "get": {
-        "summary": "Your GET endpoint",
+      "post": {
+        "summary": "Your POST endpoint",
         "tags": [],
-        "responses": {}
-      }
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "session": {
+                      "type": "object"
+                    },
+                    "response": {
+                      "type": "object",
+                      "properties": {
+                        "questions": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "sliderScope": {
+                          "type": "object"
+                        }
+                      }
+                    },
+                    "alerts": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "excludeIds": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/QuestionId"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": []
+      },
+      "parameters": []
     }
   },
   "components": {
     "schemas": {
-      "QuestionDefinition": {
+      "Question": {
         "title": "QuestionDefinition",
-        "type": "object",
         "x-examples": {
           "example-1": {
             "id": "793",
@@ -56,50 +107,117 @@
             "q_video_end_pos": null
           }
         },
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "modified": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "created": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "cache_last_answered_date": {
-            "type": "string"
-          },
-          "question_text": {
-            "type": "string"
-          },
-          "visibility": {
-            "type": "string"
-          },
-          "created_by": {
-            "type": "string"
-          },
-          "link_hash": {
-            "type": "string"
-          },
-          "theme_id": {
-            "type": "string"
-          },
-          "question_img": {
-            "type": "string"
-          },
-          "cache_user_answers_count": {
-            "type": "string"
-          },
-          "updated": {
-            "type": "string",
-            "format": "date-time"
+        "allOf": [
+          {
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/QuestionId"
+              },
+              "modified": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "created": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "question_text": {
+                "type": "string"
+              },
+              "visibility": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "link_hash": {
+                "type": "string"
+              },
+              "theme_id": {
+                "type": "string"
+              },
+              "question_img": {
+                "type": "string"
+              },
+              "updated": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "type": {
+                "type": "string"
+              },
+              "publish_status": {
+                "type": "string"
+              },
+              "angle": {
+                "type": "string"
+              },
+              "mixed_id": {
+                "type": "string"
+              },
+              "mixed_link": {
+                "type": "string"
+              },
+              "is_deleted": {
+                "type": "string"
+              },
+              "question_image_type": {
+                "type": "string"
+              },
+              "question_video_url": {
+                "type": "string"
+              },
+              "q_video_start_pos": {
+                "type": "string"
+              },
+              "q_video_end_pos": {
+                "type": "string"
+              }
+            }
           }
-        }
+        ],
+        "type": "object"
+      },
+      "QuestionId": {
+        "title": "QuestionId",
+        "type": "integer"
+      },
+      "CachedQuestion": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "cache_last_answered_date": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "cache_user_answers_count": {
+                "type": "string"
+              },
+              "cache_user_liked_count": {
+                "type": "string"
+              },
+              "cache_user_disliked_count": {
+                "type": "string"
+              },
+              "cache_commentars_count": {
+                "type": "string"
+              },
+              "cache_theme_background": {
+                "type": "string"
+              },
+              "cache_theme_image_css": {
+                "type": "string"
+              },
+              "cache_answered_users_count": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Question"
+          }
+        ]
       }
     }
   }
