@@ -17,13 +17,14 @@
         "responses": {
           "200": {
             "description": "OK",
-            "content": {
+              "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "session": {
-                      "type": "object"
+                    "alerts": {
+                      "type": "array",
+                      "items": {}
                     },
                     "response": {
                       "type": "object",
@@ -37,9 +38,8 @@
                         }
                       }
                     },
-                    "alerts": {
-                      "type": "array",
-                      "items": {}
+                    "session": {
+                      "type": "object"
                     }
                   }
                 }
@@ -48,24 +48,8 @@
           }
         },
         "requestBody": {
-          "description": "",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "excludeIds": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/QuestionId"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": []
+          
+        }
       },
       "parameters": []
     }
