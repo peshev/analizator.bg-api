@@ -10,7 +10,7 @@
     }
   ],
   "paths": {
-    "/questions": {
+    "": {
       "post": {
         "summary": "Your POST endpoint",
         "tags": [],
@@ -65,9 +65,50 @@
             }
           }
         },
-        "parameters": []
+        "parameters": [],
+        "operationId": ""
       },
       "parameters": []
+    },
+    "/questions": {
+      "post": {
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header"
+          },
+          {
+            "schema": {
+              "type": "array"
+            },
+            "in": "query",
+            "name": "excludeids",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {}
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -178,46 +219,811 @@
         ],
         "type": "object"
       },
-      "QuestionId": {
-        "title": "QuestionId",
-        "type": "integer"
-      },
       "CachedQuestion": {
         "allOf": [
           {
-            "type": "object",
             "properties": {
-              "cache_last_answered_date": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "cache_user_answers_count": {
+              "age_1_answered_users_count": {
                 "type": "string"
               },
-              "cache_user_liked_count": {
+              "age_1_user_answers_count": {
                 "type": "string"
               },
-              "cache_user_disliked_count": {
+              "age_1_users_top_answer": {
                 "type": "string"
               },
-              "cache_commentars_count": {
+              "age_2_answered_users_count": {
                 "type": "string"
               },
-              "cache_theme_background": {
+              "age_2_user_answers_count": {
                 "type": "string"
               },
-              "cache_theme_image_css": {
+              "age_2_users_top_answer": {
                 "type": "string"
               },
-              "cache_answered_users_count": {
+              "age_3_answered_users_count": {
+                "type": "string"
+              },
+              "age_3_user_answers_count": {
+                "type": "string"
+              },
+              "age_3_users_top_answer": {
+                "type": "string"
+              },
+              "age_4_answered_users_count": {
+                "type": "string"
+              },
+              "age_4_user_answers_count": {
+                "type": "string"
+              },
+              "age_4_users_top_answer": {
+                "type": "string"
+              },
+              "age_5_answered_users_count": {
+                "type": "string"
+              },
+              "age_5_user_answers_count": {
+                "type": "string"
+              },
+              "age_5_users_top_answer": {
+                "type": "string"
+              },
+              "age_6_answered_users_count": {
+                "type": "string"
+              },
+              "age_6_user_answers_count": {
+                "type": "string"
+              },
+              "age_6_users_top_answer": {
+                "type": "string"
+              },
+              "age_7_answered_users_count": {
+                "type": "string"
+              },
+              "age_7_user_answers_count": {
+                "type": "string"
+              },
+              "age_7_users_top_answer": {
+                "type": "string"
+              },
+              "age_8_answered_users_count": {
+                "type": "string"
+              },
+              "age_8_user_answers_count": {
+                "type": "string"
+              },
+              "age_8_users_top_answer": {
+                "type": "string"
+              },
+              "all_users_top_answer": {
+                "type": "string"
+              },
+              "answered_users_count": {
+                "type": "string"
+              },
+              "created": {
+                "type": "string"
+              },
+              "female_answered_users_count": {
+                "type": "string"
+              },
+              "female_user_answers_count": {
+                "type": "string"
+              },
+              "female_users_top_answer": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "male_answered_users_count": {
+                "type": "string"
+              },
+              "male_user_answers_count": {
+                "type": "string"
+              },
+              "male_users_top_answer": {
+                "type": "string"
+              },
+              "modified": {
+                "type": "string"
+              },
+              "options_count": {
+                "type": "string"
+              },
+              "question_id": {
+                "type": "string"
+              },
+              "region_1_answered_users_count": {
+                "type": "string"
+              },
+              "region_1_user_answers_count": {
+                "type": "string"
+              },
+              "region_1_users_top_answer": {
+                "type": "string"
+              },
+              "region_2_answered_users_count": {
+                "type": "string"
+              },
+              "region_2_user_answers_count": {
+                "type": "string"
+              },
+              "region_2_users_top_answer": {
+                "type": "string"
+              },
+              "region_3_answered_users_count": {
+                "type": "string"
+              },
+              "region_3_user_answers_count": {
+                "type": "string"
+              },
+              "region_3_users_top_answer": {
+                "type": "string"
+              },
+              "region_4_answered_users_count": {
+                "type": "string"
+              },
+              "region_4_user_answers_count": {
+                "type": "string"
+              },
+              "region_4_users_top_answer": {
+                "type": "string"
+              },
+              "region_5_answered_users_count": {
+                "type": "string"
+              },
+              "region_5_user_answers_count": {
+                "type": "string"
+              },
+              "region_5_users_top_answer": {
+                "type": "string"
+              },
+              "region_6_answered_users_count": {
+                "type": "string"
+              },
+              "region_6_user_answers_count": {
+                "type": "string"
+              },
+              "region_6_users_top_answer": {
+                "type": "string"
+              },
+              "region_7_answered_users_count": {
+                "type": "string"
+              },
+              "region_7_user_answers_count": {
+                "type": "string"
+              },
+              "region_7_users_top_answer": {
+                "type": "string"
+              },
+              "region_8_answered_users_count": {
+                "type": "string"
+              },
+              "region_8_user_answers_count": {
+                "type": "string"
+              },
+              "region_8_users_top_answer": {
+                "type": "string"
+              },
+              "region_9_answered_users_count": {
+                "type": "string"
+              },
+              "region_9_user_answers_count": {
+                "type": "string"
+              },
+              "region_9_users_top_answer": {
+                "type": "string"
+              },
+              "region_10_answered_users_count": {
+                "type": "string"
+              },
+              "region_10_user_answers_count": {
+                "type": "string"
+              },
+              "region_10_users_top_answer": {
+                "type": "string"
+              },
+              "region_11_answered_users_count": {
+                "type": "string"
+              },
+              "region_11_user_answers_count": {
+                "type": "string"
+              },
+              "region_11_users_top_answer": {
+                "type": "string"
+              },
+              "region_12_answered_users_count": {
+                "type": "string"
+              },
+              "region_12_user_answers_count": {
+                "type": "string"
+              },
+              "region_12_users_top_answer": {
+                "type": "string"
+              },
+              "region_13_answered_users_count": {
+                "type": "string"
+              },
+              "region_13_user_answers_count": {
+                "type": "string"
+              },
+              "region_13_users_top_answer": {
+                "type": "string"
+              },
+              "region_14_answered_users_count": {
+                "type": "string"
+              },
+              "region_14_user_answers_count": {
+                "type": "string"
+              },
+              "region_14_users_top_answer": {
+                "type": "string"
+              },
+              "region_15_answered_users_count": {
+                "type": "string"
+              },
+              "region_15_user_answers_count": {
+                "type": "string"
+              },
+              "region_15_users_top_answer": {
+                "type": "string"
+              },
+              "region_16_answered_users_count": {
+                "type": "string"
+              },
+              "region_16_user_answers_count": {
+                "type": "string"
+              },
+              "region_16_users_top_answer": {
+                "type": "string"
+              },
+              "region_17_answered_users_count": {
+                "type": "string"
+              },
+              "region_17_user_answers_count": {
+                "type": "string"
+              },
+              "region_17_users_top_answer": {
+                "type": "string"
+              },
+              "region_18_answered_users_count": {
+                "type": "string"
+              },
+              "region_18_user_answers_count": {
+                "type": "string"
+              },
+              "region_18_users_top_answer": {
+                "type": "string"
+              },
+              "region_19_answered_users_count": {
+                "type": "string"
+              },
+              "region_19_user_answers_count": {
+                "type": "string"
+              },
+              "region_19_users_top_answer": {
+                "type": "string"
+              },
+              "region_20_answered_users_count": {
+                "type": "string"
+              },
+              "region_20_user_answers_count": {
+                "type": "string"
+              },
+              "region_20_users_top_answer": {
+                "type": "string"
+              },
+              "region_21_answered_users_count": {
+                "type": "string"
+              },
+              "region_21_user_answers_count": {
+                "type": "string"
+              },
+              "region_21_users_top_answer": {
+                "type": "string"
+              },
+              "region_22_answered_users_count": {
+                "type": "string"
+              },
+              "region_22_user_answers_count": {
+                "type": "string"
+              },
+              "region_22_users_top_answer": {
+                "type": "string"
+              },
+              "region_23_answered_users_count": {
+                "type": "string"
+              },
+              "region_23_user_answers_count": {
+                "type": "string"
+              },
+              "region_23_users_top_answer": {
+                "type": "string"
+              },
+              "region_24_answered_users_count": {
+                "type": "string"
+              },
+              "region_24_user_answers_count": {
+                "type": "string"
+              },
+              "region_24_users_top_answer": {
+                "type": "string"
+              },
+              "region_25_answered_users_count": {
+                "type": "string"
+              },
+              "region_25_user_answers_count": {
+                "type": "string"
+              },
+              "region_25_users_top_answer": {
+                "type": "string"
+              },
+              "region_26_answered_users_count": {
+                "type": "string"
+              },
+              "region_26_user_answers_count": {
+                "type": "string"
+              },
+              "region_26_users_top_answer": {
+                "type": "string"
+              },
+              "region_27_answered_users_count": {
+                "type": "string"
+              },
+              "region_27_user_answers_count": {
+                "type": "string"
+              },
+              "region_27_users_top_answer": {
+                "type": "string"
+              },
+              "region_28_answered_users_count": {
+                "type": "string"
+              },
+              "region_28_user_answers_count": {
+                "type": "string"
+              },
+              "region_28_users_top_answer": {
+                "type": "string"
+              },
+              "": {
                 "type": "string"
               }
             }
-          },
-          {
-            "$ref": "#/components/schemas/Question"
           }
-        ]
+        ],
+        "x-examples": {
+          "example-1": {
+            "id": "760",
+            "question_id": "803",
+            "user_answers_count": "57",
+            "answered_users_count": "57",
+            "male_user_answers_count": "34",
+            "male_answered_users_count": "34",
+            "female_user_answers_count": "23",
+            "female_answered_users_count": "23",
+            "age_1_user_answers_count": "0",
+            "age_1_answered_users_count": "0",
+            "age_2_user_answers_count": "7",
+            "age_2_answered_users_count": "7",
+            "age_3_user_answers_count": "11",
+            "age_3_answered_users_count": "11",
+            "age_4_user_answers_count": "17",
+            "age_4_answered_users_count": "17",
+            "age_5_user_answers_count": "13",
+            "age_5_answered_users_count": "13",
+            "age_6_user_answers_count": "4",
+            "age_6_answered_users_count": "4",
+            "age_7_user_answers_count": "1",
+            "age_7_answered_users_count": "1",
+            "age_8_user_answers_count": "4",
+            "age_8_answered_users_count": "4",
+            "created": "2019-05-04 23:57:13",
+            "modified": "2019-12-07 21:55:35",
+            "options_count": "4",
+            "all_users_top_answer": "3463",
+            "male_users_top_answer": "3463",
+            "female_users_top_answer": "3463",
+            "age_1_users_top_answer": "0",
+            "age_2_users_top_answer": "3463",
+            "age_3_users_top_answer": "3463",
+            "age_4_users_top_answer": "3463",
+            "age_5_users_top_answer": "3463",
+            "age_6_users_top_answer": "3463",
+            "age_7_users_top_answer": "3463",
+            "age_8_users_top_answer": "3463",
+            "region_1_user_answers_count": "2",
+            "region_1_answered_users_count": "2",
+            "region_2_user_answers_count": "1",
+            "region_2_answered_users_count": "1",
+            "region_3_user_answers_count": "9",
+            "region_3_answered_users_count": "9",
+            "region_4_user_answers_count": "1",
+            "region_4_answered_users_count": "1",
+            "region_5_user_answers_count": "0",
+            "region_5_answered_users_count": "0",
+            "region_6_user_answers_count": "1",
+            "region_6_answered_users_count": "1",
+            "region_7_user_answers_count": "0",
+            "region_7_answered_users_count": "0",
+            "region_8_user_answers_count": "2",
+            "region_8_answered_users_count": "2",
+            "region_9_user_answers_count": "0",
+            "region_9_answered_users_count": "0",
+            "region_10_user_answers_count": "0",
+            "region_10_answered_users_count": "0",
+            "region_11_user_answers_count": "1",
+            "region_11_answered_users_count": "1",
+            "region_12_user_answers_count": "1",
+            "region_12_answered_users_count": "1",
+            "region_13_user_answers_count": "1",
+            "region_13_answered_users_count": "1",
+            "region_14_user_answers_count": "0",
+            "region_14_answered_users_count": "0",
+            "region_15_user_answers_count": "1",
+            "region_15_answered_users_count": "1",
+            "region_16_user_answers_count": "10",
+            "region_16_answered_users_count": "10",
+            "region_17_user_answers_count": "2",
+            "region_17_answered_users_count": "2",
+            "region_18_user_answers_count": "5",
+            "region_18_answered_users_count": "5",
+            "region_19_user_answers_count": "0",
+            "region_19_answered_users_count": "0",
+            "region_20_user_answers_count": "2",
+            "region_20_answered_users_count": "2",
+            "region_21_user_answers_count": "1",
+            "region_21_answered_users_count": "1",
+            "region_22_user_answers_count": "15",
+            "region_22_answered_users_count": "15",
+            "region_23_user_answers_count": "1",
+            "region_23_answered_users_count": "1",
+            "region_24_user_answers_count": "1",
+            "region_24_answered_users_count": "1",
+            "region_25_user_answers_count": "0",
+            "region_25_answered_users_count": "0",
+            "region_26_user_answers_count": "0",
+            "region_26_answered_users_count": "0",
+            "region_27_user_answers_count": "0",
+            "region_27_answered_users_count": "0",
+            "region_28_user_answers_count": "0",
+            "region_28_answered_users_count": "0",
+            "region_1_users_top_answer": "3464",
+            "region_2_users_top_answer": "3463",
+            "region_3_users_top_answer": "3463",
+            "region_4_users_top_answer": "3463",
+            "region_5_users_top_answer": "0",
+            "region_6_users_top_answer": "3463",
+            "region_7_users_top_answer": "0",
+            "region_8_users_top_answer": "3463",
+            "region_9_users_top_answer": "0",
+            "region_10_users_top_answer": "0",
+            "region_11_users_top_answer": "3463",
+            "region_12_users_top_answer": "3463",
+            "region_13_users_top_answer": "3462",
+            "region_14_users_top_answer": "0",
+            "region_15_users_top_answer": "3464",
+            "region_16_users_top_answer": "3463",
+            "region_17_users_top_answer": "3463",
+            "region_18_users_top_answer": "3464",
+            "region_19_users_top_answer": "0",
+            "region_20_users_top_answer": "3463",
+            "region_21_users_top_answer": "3462",
+            "region_22_users_top_answer": "3463",
+            "region_23_users_top_answer": "3463",
+            "region_24_users_top_answer": "3463",
+            "region_25_users_top_answer": "0",
+            "region_26_users_top_answer": "0",
+            "region_27_users_top_answer": "0",
+            "region_28_users_top_answer": "0"
+          }
+        },
+        "type": "object",
+        "title": ""
+      },
+      "Author": {
+        "title": "Author",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "mixed_id": {
+            "type": "string"
+          },
+          "mixed_link": {
+            "type": "string"
+          },
+          "profile_img": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        },
+        "x-examples": {
+          "example-1": {
+            "profile_img": "/img/user.png",
+            "id": "5316",
+            "first_name": "Zhasmina",
+            "last_name": "Hernandez",
+            "email": "zhasmina.mincheva@abv.bg",
+            "mixed_id": "531625",
+            "mixed_link": "users/531625"
+          }
+        }
+      },
+      "QuestionCategory": {
+        "title": "QuestionCategory",
+        "type": "object",
+        "properties": {
+          "category_id": {
+            "type": "string"
+          },
+          "question_id": {
+            "type": "string"
+          }
+        },
+        "x-examples": {
+          "example-1": {
+            "question_id": "803",
+            "category_id": "15"
+          }
+        }
+      },
+      "QuestionAnswer": {
+        "title": "QuestionAnswer",
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "id": "3461",
+            "order_id": "1",
+            "question_id": "803",
+            "created": "2019-05-04 23:57:13",
+            "modified": "2019-05-04 23:57:13",
+            "cache_question_type": "1",
+            "answer_text": "samo kato minecraft/roblox awerkata se skarame ili me zareje :(",
+            "answer_img": null,
+            "answer_theme_id": null,
+            "cache_user_answers_count": "7",
+            "updated": "2019-05-04 23:57:13",
+            "cache_user_answers_percentage": "12",
+            "answer_image_type": "0",
+            "answer_video_url": null,
+            "a_video_start_pos": null,
+            "a_video_end_pos": null
+          }
+        },
+        "properties": {
+          "a_video_end_pos": {
+            "type": "string"
+          },
+          "a_video_start_pos": {
+            "type": "string"
+          },
+          "answer_image_type": {
+            "type": "string"
+          },
+          "answer_img": {
+            "type": "string"
+          },
+          "answer_text": {
+            "type": "string"
+          },
+          "answer_theme_id": {
+            "type": "string"
+          },
+          "answer_video_url": {
+            "type": "string"
+          },
+          "cache_question_type": {
+            "type": "string"
+          },
+          "cache_user_answers_count": {
+            "type": "string"
+          },
+          "cache_user_answers_percentage": {
+            "type": "string"
+          },
+          "created": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "modified": {
+            "type": "string"
+          },
+          "order_id": {
+            "type": "string"
+          },
+          "question_id": {
+            "type": "string"
+          },
+          "updated": {
+            "type": "string"
+          }
+        }
+      },
+      "user_region_similarities": {
+        "title": "user_region_similarities",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "questions_compared": {
+            "type": "string"
+          },
+          "ranking_position": {
+            "type": "string"
+          },
+          "region_id": {
+            "type": "string"
+          },
+          "region_similarity_percent": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "string"
+          }
+        },
+        "x-examples": {
+          "example-1": {
+            "id": "7425",
+            "user_id": "163",
+            "region_id": "20",
+            "region_similarity_percent": "39",
+            "questions_compared": "422",
+            "ranking_position": "1"
+          }
+        }
+      },
+      "User": {
+        "title": "User",
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "id": "143",
+            "profile_img": "/attachments/user/0001/43/_shrinked_71efc4f5f01b5b2190f9374527d0ca09.png",
+            "first_name": "BG ",
+            "last_name": "Analizator"
+          }
+        },
+        "properties": {
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "profile_img": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "UserFollowing": {
+        "title": "UserFollowing",
+        "type": "object",
+        "properties": {
+          "friend_or_foe": {
+            "type": "string"
+          }
+        },
+        "x-examples": {
+          "example-1": {
+            "friend_or_foe": "149"
+          }
+        }
+      },
+      "UserSimilarity": {
+        "title": "UserSimilarity",
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "compared_user_id": "5439",
+            "comp_user_mixed_id": "543900",
+            "comp_user_first_name": "Martin",
+            "comp_user_last_name": "Shumkov",
+            "comp_user_profile_image": "/img/user.png",
+            "comp_user_mixed_link": "users/543900",
+            "comp_user_gender": "1",
+            "similarity_percentage": "93.33",
+            "questions_compared": "5"
+          }
+        },
+        "properties": {
+          "comp_user_profile_image": {
+            "type": "string"
+          },
+          "similarity_percentage": {
+            "type": "string"
+          },
+          "comp_user_first_name": {
+            "type": "string"
+          },
+          "comp_user_gender": {
+            "type": "string"
+          },
+          "comp_user_last_name": {
+            "type": "string"
+          },
+          "comp_user_mixed_id": {
+            "type": "string"
+          },
+          "comp_user_mixed_link": {
+            "type": "string"
+          },
+          "compared_user_id": {
+            "type": "string"
+          },
+          "questions_compared": {
+            "type": "string"
+          }
+        }
+      },
+      "UserAnswer": {
+        "title": "UserAnswer",
+        "type": "object",
+        "properties": {
+          "answer_id": {
+            "type": "string"
+          },
+          "cache_age": {
+            "type": "string"
+          },
+          "cache_order_id": {
+            "type": "string"
+          },
+          "cache_question_factor": {
+            "type": "string"
+          },
+          "cache_question_id": {
+            "type": "string"
+          },
+          "cache_region_id": {
+            "type": "string"
+          },
+          "cache_sex": {
+            "type": "string"
+          },
+          "created": {
+            "type": "string"
+          },
+          "history_visibility": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "string"
+          }
+        },
+        "x-examples": {
+          "example-1": {
+            "id": "202715",
+            "cache_order_id": "1",
+            "cache_question_id": "817",
+            "answer_id": "3535",
+            "user_id": "143",
+            "created": "2019-10-29 18:45:05",
+            "cache_question_factor": "1",
+            "history_visibility": null,
+            "cache_region_id": "3",
+            "cache_age": "29",
+            "cache_sex": "1"
+          }
+        }
       }
     }
   }
